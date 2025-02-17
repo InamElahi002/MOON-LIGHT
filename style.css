@@ -1,0 +1,90 @@
+/* Reset default padding and margin */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.head{
+    color: white;
+    position: absolute;
+    left: 40%;
+    bottom: 20%;
+    font-size: large;
+    font-weight: bolder;
+
+}
+
+/* Container for both moons */
+.moon {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+/* General moon styles */
+.moon-1, .moon-2 {
+    text-align: center;
+    color: white;
+    background-color: black;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 15px white;
+   
+}
+
+/* Glowing effect for both moons */
+.moon-1::before, .moon-2::before {
+    content: "";
+    background-color: rgb(143, 75, 220);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    animation: moonGlow 3.2s linear infinite alternate;
+}
+
+/* Keyframes for animation */
+@keyframes moonGlow {
+    0% {
+        transform: translateX(40px) scale(0.9);
+        box-shadow: none;
+    }
+    50% {
+        transform: translateX(0px) scale(1.02);
+        box-shadow: 0 0 15px white, 0 0 60px 5px white;
+    }
+    100% {
+        transform: translateX(-40px) scale(0.9);
+        box-shadow: none;
+    }
+}
+
+/* Text inside the moons */
+.span-1, .span-2 {
+    position: absolute;
+    font-size: large;
+    font-weight: bolder;
+    font-style: italic;
+    transform: translate(-50%, -50%);
+}
+
+/* Different colors for each moon's text */
+.span-1 {
+    color: rgb(8, 247, 72);
+}
+
+.span-2 {
+    color: aqua;
+}

@@ -1,0 +1,67 @@
+body{
+    background-color:black;
+}
+.moon {
+    background-color: black;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    position: absolute;
+    top: 38%;
+    left: 40%;
+    transform: translate(-50% -50%);
+}
+
+.moon span {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+    position: absolute;
+    top: 47%;
+    left: 29%;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    cursor: pointer;
+   /* transform: translate(-50%, -50%);. */
+}
+
+.moon::before {
+    content: "";
+    background-color: #ffff;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    border-radius: 50%;
+    animation: 3.2s animation linear infinite alternate;
+}
+
+
+@keyframes animation {
+
+    0% {
+
+        transform: translateX(40px) scale(0.9);
+        box-shadows: none;
+
+    }
+
+    50% {
+        transform: translate(0px, 0px) scale(1.02);
+        box-shadow: 0 0 10px #ffff, 0 0 80px 2px #ffff;
+
+    }
+
+    100% {
+
+        transform: translateX(-40px) scale(0.9);
+        box-shadows: none;
+
+    }
+}
